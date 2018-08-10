@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>MySQL学习经验 | 冰哥的空间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Tu Bing">
+  
+  
+    <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编写功能模块代码，需要对数据进行操作，因而需要学习数据库的知识，而MySQL作为最流行的开源数据库之一，有必要深入学习。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初学的时候，先是从建库、建表以及对表的增删查改开始，这个阶段就是多写，多练习，在网上找一些习题也可以，夯实基础很">
+  
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编写功能模块代码，需要对数据进行操作，因而需要学习数据库的知识，而MySQL作为最流行的开源数据库之一，有必要深入学习。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初学的时候，先是从建库、建表以及对表的增删查改开始，这个阶段就是多写，多练习，在网上找一些习题也可以，夯实基础很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL学习经验">
+<meta property="og:url" content="http://tubing.me/2018/08/10/MySQL学习经验/index.html">
+<meta property="og:site_name" content="冰哥的空间">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编写功能模块代码，需要对数据进行操作，因而需要学习数据库的知识，而MySQL作为最流行的开源数据库之一，有必要深入学习。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初学的时候，先是从建库、建表以及对表的增删查改开始，这个阶段就是多写，多练习，在网上找一些习题也可以，夯实基础很">
+<meta property="og:updated_time" content="2018-08-10T07:13:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL学习经验">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编写功能模块代码，需要对数据进行操作，因而需要学习数据库的知识，而MySQL作为最流行的开源数据库之一，有必要深入学习。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;初学的时候，先是从建库、建表以及对表的增删查改开始，这个阶段就是多写，多练习，在网上找一些习题也可以，夯实基础很">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">冰哥的空间</a></h1>
+    <p><a href="/">互联网技术与管理交流分享(还可关注我的公众号：冰哥的分享，微信ID：bingo9876543210)         https://github.com/tubing1220</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2018/08/10/MySQL学习经验/">
+  <time datetime="2018-08-10T07:15:32.000Z">
+    2018-08-10
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">MySQL学习经验</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写功能模块代码，需要对数据进行操作，因而需要学习数据库的知识，而MySQL作为最流行的开源数据库之一，有必要深入学习。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;初学的时候，先是从建库、建表以及对表的增删查改开始，这个阶段就是多写，多练习，在网上找一些习题也可以，夯实基础很重要。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深入一点就需要了解建表语句的优化，查询语句的优化，以及索引的建立等。网上有很多优化军规，几十条，背下来似乎什么都明白了，只是一旦具体操作，又会觉得无从下手。试着去深入了解数据库的一些原理，比如varchar和char在存储方面的异同，比如索引使用的B+树的实现原理。复合索引有个左前缀原则，建立a，b，c的复合索引（a,b,c），这时候我们知道a,ab,abc都是可以用得上索引，当然为什么，我们可以理解就好像修桥一样，abc三段，a没有修通就没办法到达b，a如果修通了，b没修通就没办法到达c，如果更深入一点了解B+树在MySQL中的实现，就知道为什么只能是这样的。另外对数据库引擎InnoDB，MyISAM等特点和区别有更多了解最好的。了解一下数据库ACID原理，特别是事务隔离等。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当你了解到这个程度其实已经够应对开发中的很多问题，到了这个时候，优化数据库表的前提落到了对业务的熟悉上了，怎样设计好业务表，几张表，哪些字段等等都会对后续数据库的读写性能有非常大的影响。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后面，你还需要懂得解决问题。比如通过错误日志还有慢查询日志来看问题在哪里，通过explain和profile等分析命令来看问题在哪里，是否有修改的空间。还有需要你考虑分库分表的时候。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然如果你想从架构层面掌握更多知识的话，对数据库的主从复制原理，以及如何自己搭建一套安全可靠的数据库。特别是对数据库的配置文件中参数的优化需要了解，还需要对数据库做监控和备份。当然如何验证自己真正掌握了，一个是通过做习题，做项目，另外就是给别人讲解。</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2018 <a href="/">Tu Bing</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
